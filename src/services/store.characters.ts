@@ -3,7 +3,7 @@ import { iCharacter } from '../interfaces/interfaz';
 export class HttpStoreCharacter {
     url: string;
     constructor() {
-        this.url = 'http://localhost:3521/tasks';
+        this.url = 'http://localhost:3500/results';
     }
     getCharacters(): Promise<Array<iCharacter>> {
         // GET
