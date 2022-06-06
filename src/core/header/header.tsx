@@ -1,4 +1,6 @@
-export function Header() {
+import { aMenuItems } from '../../interfaces/menu-items';
+
+export function Header({ options }: { options: aMenuItems }) {
     const template = (
         <>
             <div>

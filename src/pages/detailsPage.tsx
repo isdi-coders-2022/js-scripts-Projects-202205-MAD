@@ -5,3 +5,5 @@ export function DetailsPage() {
 
     return template;
 }
+
+export default DetailsPage;
