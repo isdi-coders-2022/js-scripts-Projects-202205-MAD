@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { NavButtons } from '../components/buttons/navButtons';
 import { CharacterList } from '../components/characterList/characterList';
 import { Footer } from '../core/footer/footer';
 import { Header } from '../core/header/header';
@@ -10,6 +11,10 @@ export function HomePage() {
             <main>
                 <CharacterList />
             </main>
+            <NavButtons />
+
+            <Footer></Footer>
+
         </>
     );
 
