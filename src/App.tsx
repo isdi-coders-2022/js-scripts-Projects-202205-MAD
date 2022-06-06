@@ -1,15 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { HomePage } from './pages/homePage';
+import { CharacterContextProvider } from './context/character.provider';
 
 function App() {
     return (
         <>
-            <HomePage></HomePage>
+            <CharacterContextProvider>
+                <HomePage />
+            </CharacterContextProvider>
         </>
     );
 }
 
 export default App;
-
