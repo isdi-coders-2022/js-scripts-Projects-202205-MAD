@@ -18,7 +18,7 @@ export function HomePage() {
                 </ul>
             </main>
 
-            <Footer value="23"></Footer>
+            <Footer></Footer>
         </>
     );
 
