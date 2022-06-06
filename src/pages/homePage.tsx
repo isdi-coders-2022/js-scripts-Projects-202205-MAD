@@ -12,7 +12,7 @@ export function HomePage() {
                 <ul>
                     {characters.map((item) => (
                         <li key={item.id}>
-                            <img src={item.image} alt="" />
+                            <img src={item.image} alt="" /> {item.name}
                         </li>
                     ))}
                 </ul>
