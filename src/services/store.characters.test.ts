@@ -28,7 +28,7 @@ describe('Given HttpStoreCharacter', () => {
                 global.fetch = jest.fn().mockResolvedValue({
                     json: jest
                         .fn()
-                        .mockResolvedValue(new CharacterApi('Task1', 'Pepe')),
+                        .mockResolvedValue([new HttpStoreCharacter()]),
                 });
                 // act
                 const result = await new HttpStoreCharacter().getCharacter(
@@ -36,18 +36,20 @@ describe('Given HttpStoreCharacter', () => {
                 );
                 // assert
                 expect(fetch).toBeCalled();
-                expect(result.title).toBe('Task1');
+                expect(result.name).toBe('Rick Sanchez');
             });
         });
 
         describe('And we use method setCharacter', () => {
-            test('Then it should return the added task', async () => {
+            test('Then it should return the added character', async () => {
                 // arrange
-                const character = new CharacterApi('Task1', 'Pepe');
+                const character = new HttpStoreCharacter('Task1', 'Pepe');
                 global.fetch = jest.fn().mockResolvedValue({
                     json: jest
                         .fn()
-                        .mockResolvedValue(new CharacterApi('Task1', 'Pepe')),
+                        .mockResolvedValue(
+                            new HttpStoreCharacter('Task1', 'Pepe')
+                        ),
                 });
                 // act
                 const result = await new HttpStoreCharacter().setCharacter(
@@ -61,11 +63,13 @@ describe('Given HttpStoreCharacter', () => {
         describe('And we use method updateCharacter', () => {
             test('Then it should return the updated character', async () => {
                 // arrange
-                const character = new CharacterApi('Task1', 'Pepe');
+                const character = new HttpStoreCharacter('Task1', 'Pepe');
                 global.fetch = jest.fn().mockResolvedValue({
                     json: jest
                         .fn()
-                        .mockResolvedValue(new CharacterApi('Task1', 'Pepe')),
+                        .mockResolvedValue(
+                            new HttpStoreCharacter('Task1', 'Pepe')
+                        ),
                 });
                 // act
                 const result = await new HttpStoreCharacter().updateCharacter(
