@@ -1,0 +1,22 @@
+{
+    "budgets": [
+        {
+            "id": 1,
+            "name": "Carrots",
+            "amount": "1500",
+            "reminder": false
+        },
+        {
+            "id": 2,
+            "name": "Laundry",
+            "amount": "2500",
+            "reminder": true
+        },
+        {
+            "id": 3,
+            "name": "Ginger",
+            "amount": "1000",
+            "reminder": true
+        }
+    ]
+}
