@@ -3,3 +3,5 @@ export function FavPage() {
 
     return template;
 }
+
+export default FavPage;
