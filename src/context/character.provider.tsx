@@ -18,7 +18,7 @@ export function CharacterContextProvider({
                 console.log(obj.results);
                 setCharacters(obj.results);
             });
-    });
+    }, []);
 
     const context = {
         characters,
