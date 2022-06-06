@@ -20,9 +20,9 @@ function App() {
     const LoginPage = React.lazy(() => import('./pages/loginPage'));
 
     const options: aMenuItems = [
-        { path: '', label: 'home', page: <HomePage /> },
+        { path: '', label: 'Home', page: <HomePage /> },
         { path: 'favourites', label: 'favoritos', page: <FavPage /> },
-        { path: 'details', label: 'Details', page: <DetailsPage /> },
+        { path: 'details', label: '', page: <DetailsPage /> },
         { path: 'login', label: 'Login', page: <LoginPage /> },
         { path: '*', label: '', page: <Navigate replace to="" /> },
     ];
