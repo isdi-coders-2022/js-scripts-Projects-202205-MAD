@@ -8,6 +8,9 @@ export function CharacterContextProvider({
 }: {
     children: ReactElement;
 }) {
+    const indexPage: number = 1;
+    const [currentPage, setCurrentPage] = useState(indexPage);
+
     const initialState: Array<iCharacter> = [];
     const [characters, setCharacters] = useState(initialState);
 
