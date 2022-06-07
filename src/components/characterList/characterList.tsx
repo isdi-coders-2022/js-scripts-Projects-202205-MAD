@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { CharactersContext } from '../../context/character.context';
 import { iCharacter } from '../../interfaces/interfaz';
@@ -10,7 +11,9 @@ export function CharacterList() {
             {characters.map((item: iCharacter) => (
                 <li key={item.id}>
                     <div>
-                        <img src={item.image} alt="" />
+                        <Link to="details">
+                            <img src={item.image} alt="" />
+                        </Link>
                     </div>
                     <p>{item.name}</p>
                 </li>

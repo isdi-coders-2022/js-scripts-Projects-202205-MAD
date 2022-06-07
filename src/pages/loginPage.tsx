@@ -3,3 +3,5 @@ export function LoginPage() {
 
     return template;
 }
+
+export default LoginPage;
