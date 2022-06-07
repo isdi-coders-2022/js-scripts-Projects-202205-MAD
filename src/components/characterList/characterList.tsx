@@ -11,7 +11,7 @@ export function CharacterList() {
             {characters.map((item: iCharacter) => (
                 <li key={item.id}>
                     <div>
-                        <Link to="details">
+                        <Link to={'details/' + item.id}>
                             <img src={item.image} alt="" />
                         </Link>
                     </div>
