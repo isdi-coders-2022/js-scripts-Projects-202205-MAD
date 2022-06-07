@@ -35,7 +35,6 @@ export function NavButtons() {
             </section>
         </>
     );
-    console.log(currentPage);
 
     return template;
 }

@@ -24,11 +24,11 @@ export function CharacterContextProvider({
         );
     }, []);
 
-    function nextPage(count: number) {
+    const nextPage = (count: number) => {
         CharacterApi.getCharacters(count).then((resp) =>
             dispatch(actions.loadCharactersAction(resp.results))
         );
-    }
+    };
 
     // useEffect(() => {
     //     CharacterApi.getCharacters()

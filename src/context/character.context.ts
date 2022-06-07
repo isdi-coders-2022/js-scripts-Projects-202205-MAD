@@ -4,8 +4,10 @@ import { iCharacter } from '../interfaces/interfaz';
 
 let initialContext: {
     characters: Array<iCharacter>;
+    nextPage(count: number): void;
 } = {
     characters: [],
+    nextPage: () => {},
 };
 
 export const CharactersContext = createContext(initialContext);
