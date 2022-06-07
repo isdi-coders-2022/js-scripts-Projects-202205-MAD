@@ -24,7 +24,7 @@ export function CharacterContextProvider({
         );
     }, []);
 
-    function nextPage(count: any) {
+    function nextPage(count: number) {
         CharacterApi.getCharacters(count).then((resp) =>
             dispatch(actions.loadCharactersAction(resp.results))
         );
@@ -41,6 +41,7 @@ export function CharacterContextProvider({
 
     const context = {
         characters,
+        nextPage,
     };
 
     return (

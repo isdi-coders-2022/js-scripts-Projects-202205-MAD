@@ -1,9 +1,11 @@
-import { SyntheticEvent, useContext, useState } from 'react';
+import { ReactElement, SyntheticEvent, useContext, useState } from 'react';
 import { CharactersContext } from '../../context/character.context';
 export function NavButtons() {
     const initialPage = 1;
 
     const [currentPage, setcurrentPage] = useState(initialPage);
+    const { nextPage } = useContext(CharactersContext);
+    nextPage(currentPage);
 
     const template = (
         <>
