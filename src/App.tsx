@@ -6,10 +6,7 @@ import {
     Navigate,
 } from 'react-router-dom';
 import './App.css';
-import { HomePage } from './pages/homePage';
 import { CharacterContextProvider } from './context/character.provider';
-import { FavPage } from './pages/favPage';
-import { LoginPage } from './pages/loginPage';
 import { aMenuItems } from './interfaces/menu-items';
 import { Layout } from './core/layout';
 
@@ -20,10 +17,10 @@ function App() {
     const LoginPage = React.lazy(() => import('./pages/loginPage'));
 
     const options: aMenuItems = [
-        { path: '', label: 'Home', page: <HomePage /> },
+        { path: '', label: 'home', page: <HomePage /> },
         { path: 'favorites', label: 'favorites', page: <FavPage /> },
         { path: 'details', label: '', page: <DetailsPage /> },
-        { path: 'login', label: 'Login', page: <LoginPage /> },
+        { path: 'login', label: '', page: <LoginPage /> },
         { path: '*', label: '', page: <Navigate replace to="" /> },
     ];
 
