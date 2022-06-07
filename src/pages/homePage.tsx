@@ -12,9 +12,6 @@ export function HomePage() {
                 <CharacterList />
             </main>
             <NavButtons />
-
-            <Footer></Footer>
-
         </>
     );
 
