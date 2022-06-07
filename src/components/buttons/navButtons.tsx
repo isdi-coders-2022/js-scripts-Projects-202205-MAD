@@ -1,15 +1,11 @@
-import { SyntheticEvent } from 'react';
+import { SyntheticEvent, useContext, useState } from 'react';
+import { CharactersContext } from '../../context/character.context';
 export function NavButtons() {
-    let index = 1;
-
     function handlerButton(ev: SyntheticEvent) {
         const element = (ev.target as HTMLElement).id;
         if (element === 'next') {
-            index = index + 1;
         } else {
-            index = index - 1;
         }
-        console.log(index);
     }
 
     const template = (

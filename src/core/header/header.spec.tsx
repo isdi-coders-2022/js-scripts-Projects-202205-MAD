@@ -17,11 +17,13 @@ describe('Given the component Header', () => {
             { path: 'login', label: '', page: <LoginPage /> },
         ];
         test('Render Header', () => {
+
             render(
                 <BrowserRouter>
                     <Header options={options} />
                 </BrowserRouter>
             );
+
             const nameTeam = screen.getByText(/Rick/i);
             expect(nameTeam).toBeInTheDocument();
         });

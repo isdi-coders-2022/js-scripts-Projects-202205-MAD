@@ -12,25 +12,25 @@ export class HttpStoreCharacter {
             return resp.json();
         });
     }
-    getCharacter(task: iCharacter): Promise<iCharacter> {
+    getCharacter(id: string): Promise<iCharacter> {
         // GET
-        return fetch(this.url + `/${task.id}`).then((resp) => resp.json());
+        return fetch(this.url + `/${id}`).then((resp) => resp.json());
     }
-    setCharacter(task: iCharacter): Promise<iCharacter> {
+    setCharacter(id: string): Promise<iCharacter> {
         // POST
         return fetch(this.url, {
             method: 'POST',
-            body: JSON.stringify(task),
+            body: JSON.stringify(id),
             headers: {
                 'Content-Type': 'application/json',
             },
         }).then((response) => response.json());
     }
-    updateCharacter(task: iCharacter): Promise<Partial<iCharacter>> {
+    updateCharacter(character: iCharacter): Promise<Partial<iCharacter>> {
         // PUT / PATCH
-        return fetch(this.url + `/${task.id}`, {
+        return fetch(this.url + `/${character.id}`, {
             method: 'PATCH',
-            body: JSON.stringify(task),
+            body: JSON.stringify(character),
             headers: {
                 'Content-Type': 'application/json',
             },
