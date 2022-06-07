@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { CharactersContext } from '../context/character.context';
 
 export class CharacterApi {
     static async getCharacters(): Promise<any> {

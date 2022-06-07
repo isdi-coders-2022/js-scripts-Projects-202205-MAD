@@ -21,7 +21,7 @@ function App() {
 
     const options: aMenuItems = [
         { path: '', label: 'Home', page: <HomePage /> },
-        { path: 'favourites', label: 'favoritos', page: <FavPage /> },
+        { path: 'favorites', label: 'favorites', page: <FavPage /> },
         { path: 'details', label: '', page: <DetailsPage /> },
         { path: 'login', label: 'Login', page: <LoginPage /> },
         { path: '*', label: '', page: <Navigate replace to="" /> },
