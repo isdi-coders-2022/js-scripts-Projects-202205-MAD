@@ -19,12 +19,12 @@ export function CharacterContextProvider({
     const [characters, dispatch] = useReducer(characterReducer, initialState);
 
     useEffect(() => {
-        CharacterApi.getCharacters(33).then((resp) =>
+        CharacterApi.getCharacters(1).then((resp) =>
             dispatch(actions.loadCharactersAction(resp.results))
         );
     }, []);
 
-    function nextPage(count: any) {
+    function nextPage(count: number) {
         CharacterApi.getCharacters(count).then((resp) =>
             dispatch(actions.loadCharactersAction(resp.results))
         );
@@ -41,6 +41,7 @@ export function CharacterContextProvider({
 
     const context = {
         characters,
+        nextPage,
     };
 
     return (
