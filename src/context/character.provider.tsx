@@ -1,3 +1,4 @@
+import { count } from 'node:console';
 import { ReactElement, useEffect, useState } from 'react';
 import { iCharacter } from '../interfaces/interfaz';
 import { CharacterApi } from '../services/api';
@@ -15,7 +16,7 @@ export function CharacterContextProvider({
     const [characters, setCharacters] = useState(initialState);
 
     useEffect(() => {
-        CharacterApi.getCharacters()
+        CharacterApi.getCharacters(count)
             .then((resp) => resp)
             .then((obj) => {
                 console.log(obj.results);
