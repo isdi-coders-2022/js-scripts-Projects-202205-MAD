@@ -22,7 +22,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
+        "test": "react-scripts test --coverage",
         "eject": "react-scripts eject",
         "prepare": "husky install",
         "server": "json-server --watch --port 3500 ./src/server/db.json"
@@ -52,5 +52,15 @@
     },
     "prettier": {
         "singleQuote": true
+    },
+    "jest": {
+        "collectCoverageFrom": [
+            "src/*/.{ts,tsx}",
+            "!src/index.tsx",
+            "!src/utils/test-utils.js",
+            "!src/serviceWorker.ts",
+            "!src/reportWebVitals.ts",
+            "!src/redux/hooks.ts"
+        ]
     }
 }
