@@ -52,5 +52,15 @@
     },
     "prettier": {
         "singleQuote": true
+    },
+    "jest": {
+        "collectCoverageFrom": [
+            "src/*/.{ts,tsx}",
+            "!src/index.tsx",
+            "!src/utils/test-utils.js",
+            "!src/serviceWorker.ts",
+            "!src/reportWebVitals.ts",
+            "!src/redux/hooks.ts"
+        ]
     }
 }

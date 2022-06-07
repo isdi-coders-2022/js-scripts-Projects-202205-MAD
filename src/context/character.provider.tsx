@@ -10,9 +10,6 @@ export function CharacterContextProvider({
 }: {
     children: ReactElement;
 }) {
-    const indexPage: number = 1;
-    const [currentPage, setCurrentPage] = useState(indexPage);
-
     const initialState: Array<iCharacter> = [];
     // const [characters, setCharacters] = useState(initialState);
 
@@ -24,11 +21,11 @@ export function CharacterContextProvider({
         );
     }, []);
 
-    const nextPage = (count: number) => {
+    function nextPage(count: number) {
         CharacterApi.getCharacters(count).then((resp) =>
             dispatch(actions.loadCharactersAction(resp.results))
         );
-    };
+    }
 
     // useEffect(() => {
     //     CharacterApi.getCharacters()

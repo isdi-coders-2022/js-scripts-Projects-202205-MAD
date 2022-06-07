@@ -6,7 +6,7 @@ import { ImageCard } from '../characterCard/imageCard';
 
 export function CharacterList() {
     const { characters } = useContext(CharactersContext);
-    console.log(characters, 'pepe');
+
     const template = (
         <ul>
             {characters.length &&
