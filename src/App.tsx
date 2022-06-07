@@ -28,17 +28,19 @@ function App() {
         <Router>
             <Layout options={options}>
                 <React.Suspense>
-                    <CharacterContextProvider>
-                        <Routes>
-                            {options.map((item) => (
-                                <Route
-                                    key={item.label}
-                                    path={item.path}
-                                    element={item.page}
-                                ></Route>
-                            ))}
-                        </Routes>
-                    </CharacterContextProvider>
+                    <React.StrictMode>
+                        <CharacterContextProvider>
+                            <Routes>
+                                {options.map((item) => (
+                                    <Route
+                                        key={item.label}
+                                        path={item.path}
+                                        element={item.page}
+                                    ></Route>
+                                ))}
+                            </Routes>
+                        </CharacterContextProvider>
+                    </React.StrictMode>
                 </React.Suspense>
             </Layout>
         </Router>

@@ -8,16 +8,17 @@ export function CharacterList() {
     const { characters } = useContext(CharactersContext);
     const template = (
         <ul>
-            {characters.map((item: iCharacter) => (
-                <li key={item.id}>
-                    <div>
-                        <Link to="details">
-                            <img src={item.image} alt="" />
-                        </Link>
-                    </div>
-                    <p>{item.name}</p>
-                </li>
-            ))}
+            {characters.length &&
+                characters.map((item: iCharacter) => (
+                    <li key={item.id}>
+                        <div>
+                            <Link to="details">
+                                <img src={item.image} alt="" />
+                            </Link>
+                        </div>
+                        <p>{item.name}</p>
+                    </li>
+                ))}
         </ul>
     );
 
