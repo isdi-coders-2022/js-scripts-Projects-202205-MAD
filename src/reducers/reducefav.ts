@@ -6,7 +6,7 @@ import { iCharacter } from '../interfaces/interfaz';
 import { iAction } from './action.creators';
 import { actionTypes } from './action.types';
 
-export function characterReducer(
+export function characterFavReducer(
     initalState: Array<iCharacter>,
     action: iAction
 ) {

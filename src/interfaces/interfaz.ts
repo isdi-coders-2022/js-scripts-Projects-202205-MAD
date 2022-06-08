@@ -17,4 +17,5 @@ export interface iCharacter {
     episode: Array<string>;
     url: string;
     created: string;
+    favorite?: boolean;
 }

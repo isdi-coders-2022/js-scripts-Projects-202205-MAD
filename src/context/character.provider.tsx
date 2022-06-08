@@ -4,6 +4,8 @@ import { characterReducer } from '../reducers/reduce';
 import { CharacterApi } from '../services/api';
 import { CharactersContext } from './character.context';
 import * as actions from '../reducers/action.creators';
+import { characterFavReducer } from '../reducers/reducefav';
+import { HttpStoreCharacter } from '../services/store.characters';
 
 export function CharacterContextProvider({
     children,
@@ -11,34 +13,39 @@ export function CharacterContextProvider({
     children: ReactElement;
 }) {
     const initialState: Array<iCharacter> = [];
-    // const [characters, setCharacters] = useState(initialState);
 
     const [characters, dispatch] = useReducer(characterReducer, initialState);
+    const [charactersFav, dispatchFav] = useReducer(
+        characterFavReducer,
+        initialState
+    );
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
-        CharacterApi.getCharacters(1).then((resp) =>
-            dispatch(actions.loadCharactersAction(resp.results))
-        );
+        CharacterApi.getCharacters(currentPage).then((resp) => {
+            dispatch(actions.loadCharactersAction(resp.results));
+        });
+    }, [currentPage]);
+
+    useEffect(() => {
+        HttpStoreCharacter.prototype.getCharacters().then((resp) => {
+            dispatchFav(actions.loadCharactersAction(resp.results));
+        });
     }, []);
 
-    function nextPage(count: number) {
-        CharacterApi.getCharacters(count).then((resp) =>
-            dispatch(actions.loadCharactersAction(resp.results))
-        );
+    function nextPage(count: string) {
+        if (count === 'sum') {
+            setCurrentPage((prev) => prev + 1);
+        } else {
+            setCurrentPage((prev) => prev - 1);
+        }
     }
-
-    // useEffect(() => {
-    //     CharacterApi.getCharacters()
-    //         .then((resp) => resp)
-    //         .then((obj) => {
-    //             console.log(obj.results);
-    //             setCharacters(obj.results);
-    //         });
-    // }, []);
 
     const context = {
         characters,
         nextPage,
+        currentPage,
+        charactersFav,
     };
 
     return (

@@ -6,10 +6,11 @@ import { Header } from '../core/header/header';
 import { CharactersContext } from '../context/character.context';
 
 export function HomePage() {
+    const { characters } = useContext(CharactersContext);
     const template = (
         <>
             <main>
-                <CharacterList />
+                <CharacterList characters={characters} />
             </main>
             <NavButtons />
         </>

@@ -4,9 +4,11 @@ import { iCharacter } from '../../interfaces/interfaz';
 import { CharacterCard } from '../characterCard/characterCard';
 import { ImageCard } from '../characterCard/imageCard';
 
-export function CharacterList() {
-    const { characters } = useContext(CharactersContext);
-
+export function CharacterList({
+    characters,
+}: {
+    characters: Array<iCharacter>;
+}) {
     const template = (
         <ul>
             {characters.length &&
