@@ -41,7 +41,7 @@ export function CharacterContextProvider({
 
     useEffect(() => {
         store.getCharacters().then((resp) => {
-            dispatchFav(actionsFav.loadCharactersFavAction(resp.results));
+            dispatchFav(actionsFav.loadCharactersFavAction(resp));
         });
     }, []);
 
@@ -58,6 +58,9 @@ export function CharacterContextProvider({
         nextPage,
         currentPage,
         charactersFav,
+        addCharacter,
+        deleteCharacter: () => {},
+        toggleComplete: () => {},
     };
 
     return (

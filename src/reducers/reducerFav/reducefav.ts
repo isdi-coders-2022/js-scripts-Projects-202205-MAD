@@ -7,28 +7,30 @@ import { iActionFav } from './actionFav.creators';
 import { actionTypesFav } from './actionFav.types';
 
 export function characterFavReducer(
-    initalState: Array<iCharacter>,
-    action: iActionFav
+    initialStateFav: Array<iCharacter>,
+    actionFav: iActionFav
 ) {
     let state: Array<iCharacter> = [];
-    switch (action.type) {
+    switch (actionFav.type) {
         case actionTypesFav['charactersFav@load']:
-            console.log(action.payload);
-            state = action.payload;
+            console.log(actionFav.payload);
+            state = actionFav.payload;
             break;
         case actionTypesFav['charactersFav@add']:
-            state = [...initalState, action.payload];
+            state = [...initialStateFav, actionFav.payload];
             break;
         case actionTypesFav['charactersFav@update']:
-            state = initalState.map((item) =>
-                item.id === action.payload.id ? action.payload : item
+            state = initialStateFav.map((item) =>
+                item.id === actionFav.payload.id ? actionFav.payload : item
             );
             break;
         case actionTypesFav['charactersFav@delete']:
-            state = initalState.filter((item) => item.id !== action.payload.id);
+            state = initialStateFav.filter(
+                (item) => item.id !== actionFav.payload.id
+            );
             break;
         default:
-            state = initalState;
+            state = initialStateFav;
     }
     return state;
 }
