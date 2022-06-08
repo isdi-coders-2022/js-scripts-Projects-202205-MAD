@@ -7,6 +7,8 @@ import * as actions from '../reducers/reducer/action.creators';
 import * as actionsFav from '../reducers/reducerFav/actionFav.creators';
 import { characterFavReducer } from '../reducers/reducerFav/reducefav';
 import { HttpStoreCharacter } from '../services/store.characters';
+import { CharacterModel } from '../data/characterModel';
+import { isTemplateExpression } from 'typescript';
 
 export function CharacterContextProvider({
     children,
@@ -21,7 +23,10 @@ export function CharacterContextProvider({
 
     useEffect(() => {
         CharacterApi.getCharacters(currentPage).then((resp) => {
-            dispatch(actions.loadCharactersAction(resp.results));
+            const newResp = resp.results.map(
+                (item: any) => (item = { ...item, favorite: false })
+            );
+            dispatch(actions.loadCharactersAction(newResp));
         });
     }, [currentPage]);
 
@@ -47,7 +52,7 @@ export function CharacterContextProvider({
 
     const addCharacter = (character: iCharacter) => {
         store
-            .setCharacter(character.id)
+            .setCharacter(character)
             .then((resp) =>
                 dispatchFav(actionsFav.addCharactersFavAction(resp))
             );

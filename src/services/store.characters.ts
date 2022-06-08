@@ -1,3 +1,4 @@
+import { CharacterModel } from '../data/characterModel';
 import { iCharacter } from '../interfaces/interfaz';
 
 export class HttpStoreCharacter {
@@ -16,11 +17,12 @@ export class HttpStoreCharacter {
         // GET
         return fetch(this.url + `/${id}`).then((resp) => resp.json());
     }
-    setCharacter(id: number): Promise<iCharacter> {
+    setCharacter(character: iCharacter): Promise<iCharacter> {
         // POST
+        console.log(character);
         return fetch(this.url, {
             method: 'POST',
-            body: JSON.stringify(id),
+            body: JSON.stringify(character),
             headers: {
                 'Content-Type': 'application/json',
             },
