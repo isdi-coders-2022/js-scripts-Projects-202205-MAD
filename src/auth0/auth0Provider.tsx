@@ -4,7 +4,11 @@ import { useAuth0 } from '@auth0/auth0-react';
 const LoginButton = () => {
     const { loginWithRedirect } = useAuth0();
 
-    return <button onClick={() => loginWithRedirect()}>Log In</button>;
+    return (
+        <div role="button" onClick={() => loginWithRedirect()}>
+            <img className="menu__icon" src={`./img/iconlogin.png`} alt="" />
+        </div>
+    );
 };
 
 export default LoginButton;
