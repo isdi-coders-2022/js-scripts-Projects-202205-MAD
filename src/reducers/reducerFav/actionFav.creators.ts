@@ -7,23 +7,23 @@ export interface iActionFav {
 }
 
 export const loadCharactersFavAction = (
-    characters: Array<iCharacter>
+    charactersFav: Array<iCharacter>
 ): iActionFav => ({
     type: actionTypesFav['charactersFav@load'],
-    payload: characters,
+    payload: charactersFav,
 });
 
-export const addCharactersFavAction = (characters: iCharacter) => ({
+export const addCharactersFavAction = (character: iCharacter) => ({
     type: actionTypesFav['charactersFav@add'],
-    payload: characters,
+    payload: character,
 });
 
-export const upadteCharactersFavAction = (characters: iCharacter) => ({
+export const upadteCharactersFavAction = (character: iCharacter) => ({
     type: actionTypesFav['charactersFav@update'],
-    payload: characters,
+    payload: character,
 });
 
-export const deteleCharactersFavAction = (characters: iCharacter) => ({
+export const deteleCharactersFavAction = (character: iCharacter) => ({
     type: actionTypesFav['charactersFav@delete'],
-    payload: characters,
+    payload: character,
 });

@@ -3,19 +3,18 @@ export interface iCharacter {
     name: string;
     status: string;
     species: string;
-    type: string;
+    type?: string;
     gender: string;
-    origin: {
+    origin?: {
         name: string;
         url: string;
     };
-    location: {
+    location?: {
         name: string;
         url: string;
     };
     image: string;
-    episode: Array<string>;
-    url: string;
-    created: string;
-    favorite?: boolean;
+    episode?: Array<string>;
+    url?: string;
+    created?: string;
 }
