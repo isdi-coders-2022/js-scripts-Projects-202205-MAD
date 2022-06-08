@@ -1,46 +1,147 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { useContext } from 'react';
+import userEvent from '@testing-library/user-event';
+import { HttpStoreCharacter } from '../services/store.characters';
 import { CharactersContext } from './character.context';
 import { CharacterContextProvider } from './character.provider';
 
-test('renders characters from context', async () => {
-    const TestComponent = function () {
-        const { characters, nextPage } = useContext(CharactersContext);
+jest.mock('../services/store.characters');
 
-        return (
-            <>
-                <p>Probando contexto</p>
-                <ul>
-                    {characters.map((item) => (
-                        <li key={item.name}>
-                            {item.name}
-                            <button
-                                type="button"
-                                onClick={() => {
-                                    nextPage(3);
-                                }}
-                            >
-                                Jorge
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-            </>
-        );
-    };
-    render(
-        <CharacterContextProvider>
-            <TestComponent></TestComponent>
-        </CharacterContextProvider>
-    );
+const Character = {
+    id: 24,
+    name: 'Armagheadon',
+    status: 'Alive',
+    species: 'Alien',
+    type: 'Cromulon',
+    gender: 'Male',
+    origin: {
+        name: 'Signus 5 Expanse',
+        url: 'https://rickandmortyapi.com/api/location/22',
+    },
+    location: {
+        name: 'Signus 5 Expanse',
+        url: 'https://rickandmortyapi.com/api/location/22',
+    },
+    image: 'https://rickandmortyapi.com/api/character/avatar/24.jpeg',
+    episode: ['https://rickandmortyapi.com/api/episode/16'],
+    url: 'https://rickandmortyapi.com/api/character/24',
+    created: '2017-11-05T08:48:30.776Z',
+    favorite: true,
+};
 
-    // act(() => {
-    //     /* fire events that update state */
+describe('Given the context', () => {
+    describe('When it is used by a test component', () => {
+        let TestComponent: () => JSX.Element;
+        beforeEach(() => {
+            HttpStoreCharacter.prototype.getCharacters = jest
+                .fn()
+                .mockResolvedValue([Character]);
+            TestComponent = function () {
+                const {
+                    charactersFav,
+                    addCharacter,
+                    toggleComplete,
+                    deleteCharacter,
+                } = useContext(CharactersContext);
+                return (
+                    <>
+                        <p>Probando contexto</p>
+                        <ul>
+                            {charactersFav.map((item) => (
+                                <li key={item.id}>{item.name}</li>
+                            ))}
+                        </ul>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                addCharacter(Character);
+                            }}
+                        >
+                            Add Character
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                toggleComplete(Character);
+                            }}
+                        >
+                            Complete Character
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                deleteCharacter(Character);
+                            }}
+                        >
+                            Delete Character
+                        </button>
+                    </>
+                );
+            };
+        });
 
-    // });
+        test('Then characterlist should be render from context', async () => {
+            render(
+                <CharacterContextProvider>
+                    <TestComponent></TestComponent>
+                </CharacterContextProvider>
+            );
+            let element = screen.getByText(/Probando contexto/i);
+            expect(element).toBeInTheDocument();
+            expect(
+                HttpStoreCharacter.prototype.getCharacters
+            ).toHaveBeenCalled();
+            element = await screen.findByText(/Armagheadon/i);
+            expect(element).toBeInTheDocument();
+        });
+        test('Then new character should be render when add button is clicked', async () => {
+            HttpStoreCharacter.prototype.setCharacter = jest
+                .fn()
+                .mockResolvedValue(Character);
 
-    const element = screen.getByText(/Probando contexto/i);
-    expect(element).toBeInTheDocument();
-    expect(CharacterContextProvider).toHaveBeenCalled();
+            render(
+                <CharacterContextProvider>
+                    <TestComponent></TestComponent>
+                </CharacterContextProvider>
+            );
+
+            userEvent.click(screen.getByText(/Add Character/i));
+            expect(
+                HttpStoreCharacter.prototype.setCharacter
+            ).toHaveBeenCalled();
+            let element = await screen.findByText(/Armagheadon/i);
+            expect(element).toBeInTheDocument();
+        });
+        test('Then a character should be favorite when button is clicked', async () => {
+            Character.favorite = true;
+            HttpStoreCharacter.prototype.updateCharacter = jest
+                .fn()
+                .mockResolvedValue(Character);
+
+            render(
+                <CharacterContextProvider>
+                    <TestComponent></TestComponent>
+                </CharacterContextProvider>
+            );
+            await screen.findByText(/Armagheadon/i);
+            userEvent.click(screen.getByText(/Complete Character/i));
+            expect(
+                HttpStoreCharacter.prototype.updateCharacter
+            ).toHaveBeenCalled();
+        });
+        test('Then a character should be deleted when delete button is clicked', async () => {
+            HttpStoreCharacter.prototype.deleteCharacter = jest
+                .fn()
+                .mockResolvedValue({ status: 200 });
+            render(
+                <CharacterContextProvider>
+                    <TestComponent></TestComponent>
+                </CharacterContextProvider>
+            );
+            userEvent.click(screen.getByText(/Delete Character/i));
+            expect(
+                HttpStoreCharacter.prototype.deleteCharacter
+            ).toHaveBeenCalled();
+        });
+    });
 });
