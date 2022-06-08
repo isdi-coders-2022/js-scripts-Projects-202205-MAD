@@ -9,8 +9,8 @@ let initialContext: {
     currentPage: number;
     charactersFav: Array<iCharacter>;
     addCharacter: (character: iCharacter) => void;
-    deleteCharacter: (id: iCharacter['id']) => void;
-    toggleComplete: (id: iCharacter['id']) => void;
+    deleteCharacter: (character: iCharacter) => void;
+    toggleComplete: (character: iCharacter) => void;
 } = {
     characters: [],
     nextPage: () => {},

@@ -52,6 +52,20 @@ export function CharacterContextProvider({
                 dispatchFav(actionsFav.addCharactersFavAction(resp))
             );
     };
+    const deleteCharacter = (character: iCharacter) => {
+        store
+            .deleteCharacter(String(character.id))
+            .then((resp) =>
+                dispatchFav(actionsFav.deteleCharactersFavAction(character))
+            );
+    };
+    const toggleComplete = (character: iCharacter) => {
+        store
+            .updateCharacter(character)
+            .then((resp) =>
+                dispatchFav(actionsFav.upadteCharactersFavAction(character))
+            );
+    };
 
     const context = {
         characters,
@@ -59,8 +73,8 @@ export function CharacterContextProvider({
         currentPage,
         charactersFav,
         addCharacter,
-        deleteCharacter: () => {},
-        toggleComplete: () => {},
+        deleteCharacter,
+        toggleComplete,
     };
 
     return (
