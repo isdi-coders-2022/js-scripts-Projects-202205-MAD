@@ -10,7 +10,7 @@ export function CharacterList({
     characters: Array<iCharacter>;
 }) {
     const template = (
-        <ul>
+        <ul className="list__card">
             {characters.length &&
                 characters.map((character: iCharacter) => (
                     <li key={character.id}>
