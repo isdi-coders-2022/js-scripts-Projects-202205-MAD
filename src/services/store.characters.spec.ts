@@ -7,7 +7,6 @@ describe('Given HttpStoreCharacter', () => {
                 // arrange
                 global.fetch = jest.fn().mockResolvedValue({
                     json: jest.fn().mockResolvedValue([
-                        // TODO cambiar por mock de personajes
                         {
                             id: 1,
                             name: 'Rick Sanchez',
@@ -31,7 +30,7 @@ describe('Given HttpStoreCharacter', () => {
         describe('And we use method getCharacter', () => {
             test('Then it should return a character', async () => {
                 // arrange
-                const characterid = 1;
+                const characterid = '1';
                 global.fetch = jest.fn().mockResolvedValue({
                     json: jest
                         .fn()
@@ -43,7 +42,7 @@ describe('Given HttpStoreCharacter', () => {
                 );
                 // assert
                 expect(fetch).toBeCalled();
-                expect(result.id).toBe(1);
+                expect(result.id).toBe('1');
                 // expect(result).toEqual()
             });
         });
@@ -51,30 +50,66 @@ describe('Given HttpStoreCharacter', () => {
         describe('And we use method setCharacter', () => {
             test('Then it should return the added character', async () => {
                 // arrange
-                const character = { name: 'Rick Sanchez', status: 'Alive' };
+                const characterId = 1;
                 global.fetch = jest.fn().mockResolvedValue({
                     json: jest.fn().mockResolvedValue({
+                        id: characterId,
                         name: 'Rick Sanchez',
                         status: 'Alive',
                     }),
                 });
                 // act
                 const result = await new HttpStoreCharacter().setCharacter(
-                    character
+                    characterId
                 );
                 // assert
                 expect(fetch).toBeCalled();
-                expect(result.name).toBe('Rick Sanchez');
+                expect(result.id).toBe(1);
             });
         });
         describe('And we use method updateCharacter', () => {
             test('Then it should return the updated character', async () => {
                 // arrange
-                const character = { name: 'Rick Sanchez', status: 'Alive' };
+                const character = {
+                    id: 6,
+                    name: 'Abadango Cluster Princess',
+                    status: 'Alive',
+                    species: 'Alien',
+                    type: '',
+                    gender: 'Female',
+                    origin: {
+                        name: 'Abadango',
+                        url: 'https://rickandmortyapi.com/api/location/2',
+                    },
+                    location: {
+                        name: 'Abadango',
+                        url: 'https://rickandmortyapi.com/api/location/2',
+                    },
+                    image: 'https://rickandmortyapi.com/api/character/avatar/6.jpeg',
+                    episode: ['https://rickandmortyapi.com/api/episode/27'],
+                    url: 'https://rickandmortyapi.com/api/character/6',
+                    created: '2017-11-04T19:50:28.250Z',
+                };
                 global.fetch = jest.fn().mockResolvedValue({
                     json: jest.fn().mockResolvedValue({
-                        name: 'Rick Sanchez',
+                        id: 6,
+                        name: 'Abadango Cluster Princess',
                         status: 'Alive',
+                        species: 'Alien',
+                        type: '',
+                        gender: 'Female',
+                        origin: {
+                            name: 'Abadango',
+                            url: 'https://rickandmortyapi.com/api/location/2',
+                        },
+                        location: {
+                            name: 'Abadango',
+                            url: 'https://rickandmortyapi.com/api/location/2',
+                        },
+                        image: 'https://rickandmortyapi.com/api/character/avatar/6.jpeg',
+                        episode: ['https://rickandmortyapi.com/api/episode/27'],
+                        url: 'https://rickandmortyapi.com/api/character/6',
+                        created: '2017-11-04T19:50:28.250Z',
                     }),
                 });
                 // act
@@ -83,7 +118,7 @@ describe('Given HttpStoreCharacter', () => {
                 );
                 // assert
                 expect(fetch).toBeCalled();
-                expect(result.name).toBe('Rick Sanchez');
+                expect(result.name).toBe('Abadango Cluster Princess');
             });
         });
         describe('And we use method deleteCharacter', () => {
