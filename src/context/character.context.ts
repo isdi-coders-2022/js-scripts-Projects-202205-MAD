@@ -5,10 +5,12 @@ import { iCharacter } from '../interfaces/interfaz';
 
 let initialContext: {
     characters: Array<iCharacter>;
-    nextPage(count: number): void;
+    nextPage(count: string): void;
+    currentPage: number;
 } = {
     characters: [],
     nextPage: () => {},
+    currentPage: 1,
 };
 
 export const CharactersContext = createContext(initialContext);

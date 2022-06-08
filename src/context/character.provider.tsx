@@ -14,17 +14,20 @@ export function CharacterContextProvider({
     // const [characters, setCharacters] = useState(initialState);
 
     const [characters, dispatch] = useReducer(characterReducer, initialState);
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
-        CharacterApi.getCharacters(1).then((resp) =>
-            dispatch(actions.loadCharactersAction(resp.results))
-        );
-    }, []);
+        CharacterApi.getCharacters(currentPage).then((resp) => {
+            dispatch(actions.loadCharactersAction(resp.results));
+        });
+    }, [currentPage]);
 
-    function nextPage(count: number) {
-        CharacterApi.getCharacters(count).then((resp) =>
-            dispatch(actions.loadCharactersAction(resp.results))
-        );
+    function nextPage(count: string) {
+        if (count === 'sum') {
+            setCurrentPage((prev) => prev + 1);
+        } else {
+            setCurrentPage((prev) => prev - 1);
+        }
     }
 
     // useEffect(() => {
@@ -39,6 +42,7 @@ export function CharacterContextProvider({
     const context = {
         characters,
         nextPage,
+        currentPage,
     };
 
     return (
