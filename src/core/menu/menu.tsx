@@ -1,6 +1,7 @@
 import './menu.css';
 import { Link } from 'react-router-dom';
 import { aMenuItems } from '../../interfaces/menu-items';
+import LoginButton from '../../auth0/auth0Provider';
 
 export function Menu({ options }: { options: aMenuItems }) {
     return (
@@ -18,13 +19,7 @@ export function Menu({ options }: { options: aMenuItems }) {
                     </li>
                 ))}
                 <li>
-                    <Link to="login">
-                        <img
-                            className="menu__icon"
-                            src={`./img/iconlogin.png`}
-                            alt=""
-                        />
-                    </Link>
+                    <LoginButton></LoginButton>
                 </li>
             </ul>
         </nav>

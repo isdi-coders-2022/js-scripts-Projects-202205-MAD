@@ -2,11 +2,11 @@
 // recibe un estado y una acción
 // retorna un NUEVO estado (NO HAY MUTACIÓN)
 
-import { iCharacter } from '../interfaces/interfaz';
+import { iCharacter } from '../../interfaces/interfaz';
 import { iAction } from './action.creators';
 import { actionTypes } from './action.types';
 
-export function characterFavReducer(
+export function characterReducer(
     initalState: Array<iCharacter>,
     action: iAction
 ) {

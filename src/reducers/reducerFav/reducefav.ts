@@ -2,29 +2,29 @@
 // recibe un estado y una acción
 // retorna un NUEVO estado (NO HAY MUTACIÓN)
 
-import { iCharacter } from '../interfaces/interfaz';
-import { iAction } from './action.creators';
-import { actionTypes } from './action.types';
+import { iCharacter } from '../../interfaces/interfaz';
+import { iActionFav } from './actionFav.creators';
+import { actionTypesFav } from './actionFav.types';
 
-export function characterReducer(
+export function characterFavReducer(
     initalState: Array<iCharacter>,
-    action: iAction
+    action: iActionFav
 ) {
     let state: Array<iCharacter> = [];
     switch (action.type) {
-        case actionTypes['characters@load']:
+        case actionTypesFav['charactersFav@load']:
             console.log(action.payload);
             state = action.payload;
             break;
-        case actionTypes['characters@add']:
+        case actionTypesFav['charactersFav@add']:
             state = [...initalState, action.payload];
             break;
-        case actionTypes['characters@update']:
+        case actionTypesFav['charactersFav@update']:
             state = initalState.map((item) =>
                 item.id === action.payload.id ? action.payload : item
             );
             break;
-        case actionTypes['characters@delete']:
+        case actionTypesFav['charactersFav@delete']:
             state = initalState.filter((item) => item.id !== action.payload.id);
             break;
         default:

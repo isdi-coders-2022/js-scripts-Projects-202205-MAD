@@ -16,7 +16,7 @@ export class HttpStoreCharacter {
         // GET
         return fetch(this.url + `/${id}`).then((resp) => resp.json());
     }
-    setCharacter(id: string): Promise<iCharacter> {
+    setCharacter(id: number): Promise<iCharacter> {
         // POST
         return fetch(this.url, {
             method: 'POST',

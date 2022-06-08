@@ -3,9 +3,9 @@ import { iCharacter } from '../../interfaces/interfaz';
 export function ImageCard({ character }: { character: iCharacter }) {
     const template = (
         <>
-            <div>
+            <div className="image__list">
                 <Link to={'details/' + character.id}>
-                    <img src={character.image} alt="" />
+                    <img className="image" src={character.image} alt="" />
                 </Link>
             </div>
             <p>{character.name}</p>

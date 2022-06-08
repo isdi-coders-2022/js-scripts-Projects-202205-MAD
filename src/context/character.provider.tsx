@@ -1,10 +1,11 @@
 import { ReactElement, useEffect, useReducer, useState } from 'react';
 import { iCharacter } from '../interfaces/interfaz';
-import { characterReducer } from '../reducers/reduce';
+import { characterReducer } from '../reducers/reducer/reduce';
 import { CharacterApi } from '../services/api';
 import { CharactersContext } from './character.context';
-import * as actions from '../reducers/action.creators';
-import { characterFavReducer } from '../reducers/reducefav';
+import * as actions from '../reducers/reducer/action.creators';
+import * as actionsFav from '../reducers/reducerFav/actionFav.creators';
+import { characterFavReducer } from '../reducers/reducerFav/reducefav';
 import { HttpStoreCharacter } from '../services/store.characters';
 
 export function CharacterContextProvider({
@@ -15,10 +16,7 @@ export function CharacterContextProvider({
     const initialState: Array<iCharacter> = [];
 
     const [characters, dispatch] = useReducer(characterReducer, initialState);
-    const [charactersFav, dispatchFav] = useReducer(
-        characterFavReducer,
-        initialState
-    );
+
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
@@ -27,12 +25,6 @@ export function CharacterContextProvider({
         });
     }, [currentPage]);
 
-    useEffect(() => {
-        HttpStoreCharacter.prototype.getCharacters().then((resp) => {
-            dispatchFav(actions.loadCharactersAction(resp.results));
-        });
-    }, []);
-
     function nextPage(count: string) {
         if (count === 'sum') {
             setCurrentPage((prev) => prev + 1);
@@ -40,6 +32,26 @@ export function CharacterContextProvider({
             setCurrentPage((prev) => prev - 1);
         }
     }
+    const store = new HttpStoreCharacter();
+    const initialStateFav: Array<iCharacter> = [];
+    const [charactersFav, dispatchFav] = useReducer(
+        characterFavReducer,
+        initialStateFav
+    );
+
+    useEffect(() => {
+        store.getCharacters().then((resp) => {
+            dispatchFav(actionsFav.loadCharactersFavAction(resp.results));
+        });
+    }, []);
+
+    const addCharacter = (character: iCharacter) => {
+        store
+            .setCharacter(character.id)
+            .then((resp) =>
+                dispatchFav(actionsFav.addCharactersFavAction(resp))
+            );
+    };
 
     const context = {
         characters,
