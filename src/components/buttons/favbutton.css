@@ -2,6 +2,9 @@
     position: absolute;
     cursor: pointer;
 }
+.picachu {
+    width: 55px;
+}
 .favorite {
     -webkit-animation: 1s rotate linear infinite;
 }
