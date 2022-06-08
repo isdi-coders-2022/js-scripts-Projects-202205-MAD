@@ -8,7 +8,7 @@ export class CharacterModel implements iCharacter {
         public status: string,
         public species: string,
         public gender: string,
-        public origin: { name: string; url: string },
+
         public image: string
     ) {
         this.favorite = false;

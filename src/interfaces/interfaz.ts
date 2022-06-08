@@ -1,4 +1,5 @@
 export interface iCharacter {
+    favorite?: boolean;
     id: number;
     name: string;
     status: string;
