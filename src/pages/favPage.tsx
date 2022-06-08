@@ -1,5 +1,15 @@
+import { useContext } from 'react';
+import { CharacterList } from '../components/characterList/characterList';
+import { CharactersContext } from '../context/character.context';
+
 export function FavPage() {
-    const template = <></>;
+    const { charactersFav } = useContext(CharactersContext);
+    console.log(charactersFav);
+    const template = (
+        <>
+            <CharacterList characters={charactersFav} />
+        </>
+    );
 
     return template;
 }

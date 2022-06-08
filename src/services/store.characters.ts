@@ -5,7 +5,7 @@ export class HttpStoreCharacter {
     constructor() {
         this.url = 'http://localhost:3500/results';
     }
-    getCharacters(): Promise<Array<iCharacter>> {
+    getCharacters(): Promise<any> {
         // GET
         return fetch(this.url).then((resp) => {
             console.log(resp.status);
