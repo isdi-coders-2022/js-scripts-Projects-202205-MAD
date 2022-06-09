@@ -38,6 +38,39 @@
       "favorite": true,
       "nickName": "josearmandorr95",
       "id": 3
+    },
+    {
+      "newId": 1,
+      "name": "Rick Sanchez",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "nickName": "jorgealia94",
+      "id": 4
+    },
+    {
+      "newId": 1,
+      "name": "Rick Sanchez",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "nickName": "jorgealia94",
+      "id": 5
+    },
+    {
+      "newId": 3,
+      "name": "Summer Smith",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+      "gender": "Female",
+      "favorite": true,
+      "nickName": "jorgealia94",
+      "id": 6
     }
   ]
 }
