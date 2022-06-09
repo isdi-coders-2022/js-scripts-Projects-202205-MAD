@@ -7,7 +7,7 @@ import { CharacterContextProvider } from './character.provider';
 
 jest.mock('../services/store.characters');
 
-const Character = {
+const character = {
     id: 24,
     name: 'Armagheadon',
     status: 'Alive',
@@ -29,13 +29,18 @@ const Character = {
     favorite: true,
 };
 
+const character2 = {
+    id: 345,
+    name: '3mosqueteros',
+};
+
 describe('Given the context', () => {
     describe('When it is used by a test component', () => {
         let TestComponent: () => JSX.Element;
         beforeEach(() => {
             HttpStoreCharacter.prototype.getCharacters = jest
                 .fn()
-                .mockResolvedValue([Character]);
+                .mockResolvedValue([character]);
             TestComponent = function () {
                 const {
                     charactersFav,
@@ -54,7 +59,7 @@ describe('Given the context', () => {
                         <button
                             type="button"
                             onClick={() => {
-                                addCharacter(Character);
+                                addCharacter(character);
                             }}
                         >
                             Add Character
@@ -62,7 +67,7 @@ describe('Given the context', () => {
                         <button
                             type="button"
                             onClick={() => {
-                                toggleComplete(Character);
+                                toggleComplete(character);
                             }}
                         >
                             Complete Character
@@ -70,7 +75,7 @@ describe('Given the context', () => {
                         <button
                             type="button"
                             onClick={() => {
-                                deleteCharacter(Character);
+                                deleteCharacter(character);
                             }}
                         >
                             Delete Character
@@ -97,7 +102,7 @@ describe('Given the context', () => {
         test('Then new character should be render when add button is clicked', async () => {
             HttpStoreCharacter.prototype.setCharacter = jest
                 .fn()
-                .mockResolvedValue(Character);
+                .mockResolvedValue(character2);
 
             render(
                 <CharacterContextProvider>
@@ -113,10 +118,10 @@ describe('Given the context', () => {
             expect(element).toBeInTheDocument();
         });
         test('Then a character should be favorite when button is clicked', async () => {
-            Character.favorite = true;
+            character.favorite = true;
             HttpStoreCharacter.prototype.updateCharacter = jest
                 .fn()
-                .mockResolvedValue(Character);
+                .mockResolvedValue(character);
 
             render(
                 <CharacterContextProvider>
