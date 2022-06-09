@@ -21,7 +21,7 @@ describe('Given HttpStoreCharacter', () => {
                     ]),
                 });
                 // act
-                const result = await new HttpStoreCharacter().getCharacters();
+                const result = await new HttpStoreCharacter().getCharacters('');
                 //
                 // assert
                 expect(fetch).toBeCalled();

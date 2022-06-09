@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { useContext } from 'react';
 import { CharactersContext } from '../../context/character.context';
 import { NavButtons } from './navButtons';
 
@@ -8,6 +7,7 @@ describe('Given the componente Navbutton', () => {
     describe('When calling it', () => {
         test('Render button', () => {
             const context = {
+                charactersBrowser: [],
                 characters: [],
                 nextPage: jest.fn(),
                 currentPage: 1,
@@ -15,6 +15,10 @@ describe('Given the componente Navbutton', () => {
                 addCharacter: jest.fn(),
                 deleteCharacter: jest.fn(),
                 toggleComplete: jest.fn(),
+                user: {},
+                isAuthenticated: false,
+                currentName: '',
+                FindCharacter: () => {},
             };
 
             render(
