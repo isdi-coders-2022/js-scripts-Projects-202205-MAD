@@ -71,6 +71,50 @@
       "favorite": true,
       "nickName": "jorgealia94",
       "id": 6
+    },
+    {
+      "newId": 14,
+      "name": "Alien Morty",
+      "species": "Alien",
+      "status": "unknown",
+      "image": "https://rickandmortyapi.com/api/character/avatar/14.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "nickName": "josearmandorr95",
+      "id": 7
+    },
+    {
+      "newId": 11,
+      "name": "Albert Einstein",
+      "species": "Human",
+      "status": "Dead",
+      "image": "https://rickandmortyapi.com/api/character/avatar/11.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "nickName": "josearmandorr95",
+      "id": 8
+    },
+    {
+      "newId": 13,
+      "name": "Alien Googah",
+      "species": "Alien",
+      "status": "unknown",
+      "image": "https://rickandmortyapi.com/api/character/avatar/13.jpeg",
+      "gender": "unknown",
+      "favorite": true,
+      "nickName": "josearmandorr95",
+      "id": 9
+    },
+    {
+      "newId": 185,
+      "name": "Joseph Eli Lipkip",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/185.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "nickName": "josearmandorr95",
+      "id": 10
     }
   ]
 }

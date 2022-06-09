@@ -8,6 +8,7 @@ import * as actionsFav from '../reducers/reducerFav/actionFav.creators';
 import { characterFavReducer } from '../reducers/reducerFav/reducefav';
 import { HttpStoreCharacter } from '../services/store.characters';
 import { useAuth0 } from '@auth0/auth0-react';
+import { CharacterApiBrowser } from '../services/apiBuscador';
 
 export function CharacterContextProvider({
     children,
@@ -17,6 +18,25 @@ export function CharacterContextProvider({
     const initialState: Array<iCharacter> = [];
 
     const [characters, dispatch] = useReducer(characterReducer, initialState);
+    const [charactersBrowser, dispatchBrowser] = useReducer(
+        characterReducer,
+        initialState
+    );
+
+    const [currentName, setCurrentName] = useState('');
+    useEffect(() => {
+        CharacterApiBrowser.getCharacters(currentName).then((resp) => {
+            const newResp = resp.results.map(
+                (item: any) => (item = { ...item, favorite: false })
+            );
+            dispatchBrowser(actions.loadCharactersAction(newResp));
+        });
+    }, [currentName]);
+
+    function FindCharacter(name: string) {
+        console.log(name, 'JORGE  NADA');
+        setCurrentName(name);
+    }
 
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -83,6 +103,9 @@ export function CharacterContextProvider({
         toggleComplete,
         user,
         isAuthenticated,
+        currentName,
+        charactersBrowser,
+        FindCharacter,
     };
 
     return (
