@@ -41,7 +41,12 @@ h2 {
         grid-template-columns: 180px 180px 180px 180px;
         grid-template-rows: 200px 200px;
     }
+
     .wrapper__picachu {
         margin-left: 32px;
+    }
+    .wrapper__image:hover {
+        transform: scale(1.3);
+        transition: 0.5s;
     }
 }

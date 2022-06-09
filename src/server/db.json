@@ -330,39 +330,6 @@
       "id": 42
     },
     {
-      "newId": 3,
-      "name": "Summer Smith",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
-      "gender": "Female",
-      "favorite": true,
-      "nickName": "jorgealia94",
-      "id": 43
-    },
-    {
-      "newId": 2,
-      "name": "Morty Smith",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
-      "gender": "Male",
-      "favorite": true,
-      "nickName": "jorgealia94",
-      "id": 44
-    },
-    {
-      "newId": 2,
-      "name": "Morty Smith",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
-      "gender": "Male",
-      "favorite": true,
-      "nickName": "jorgealia94",
-      "id": 45
-    },
-    {
       "newId": 79,
       "name": "Crab Spider",
       "species": "Alien",
@@ -371,6 +338,96 @@
       "gender": "unknown",
       "favorite": true,
       "id": 46
+    },
+    {
+      "newId": 3,
+      "name": "Summer Smith",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+      "gender": "Female",
+      "favorite": true,
+      "id": 47
+    },
+    {
+      "newId": 8,
+      "name": "Adjudicator Rick",
+      "species": "Human",
+      "status": "Dead",
+      "image": "https://rickandmortyapi.com/api/character/avatar/8.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "id": 48
+    },
+    {
+      "newId": 3,
+      "name": "Summer Smith",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+      "gender": "Female",
+      "favorite": true,
+      "id": 49
+    },
+    {
+      "newId": 3,
+      "name": "Summer Smith",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+      "gender": "Female",
+      "favorite": true,
+      "id": 50
+    },
+    {
+      "newId": 2,
+      "name": "Morty Smith",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "id": 51
+    },
+    {
+      "newId": 1,
+      "name": "Rick Sanchez",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "id": 52
+    },
+    {
+      "newId": 5,
+      "name": "Jerry Smith",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/5.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "id": 53
+    },
+    {
+      "newId": 6,
+      "name": "Abadango Cluster Princess",
+      "species": "Alien",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/6.jpeg",
+      "gender": "Female",
+      "favorite": true,
+      "id": 54
+    },
+    {
+      "newId": 10,
+      "name": "Alan Rails",
+      "species": "Human",
+      "status": "Dead",
+      "image": "https://rickandmortyapi.com/api/character/avatar/10.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "id": 55
     }
   ]
 }
