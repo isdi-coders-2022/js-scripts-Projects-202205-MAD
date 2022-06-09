@@ -5,5 +5,39 @@
     "next": "https://rickandmortyapi.com/api/character/?page=2",
     "prev": null
   },
-  "results": []
+  "results": [
+    {
+      "newId": 1,
+      "name": "Rick Sanchez",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "nickName": "josearmandorr95",
+      "id": 1
+    },
+    {
+      "newId": 3,
+      "name": "Summer Smith",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+      "gender": "Female",
+      "favorite": true,
+      "nickName": "josearmandorr95",
+      "id": 2
+    },
+    {
+      "newId": 5,
+      "name": "Jerry Smith",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/5.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "nickName": "josearmandorr95",
+      "id": 3
+    }
+  ]
 }

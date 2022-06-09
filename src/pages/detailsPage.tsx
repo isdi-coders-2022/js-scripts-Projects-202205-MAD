@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { isTemplateTail } from 'typescript';
 import { CharacterCard } from '../components/characterCard/characterCard';
 import { CharactersContext } from '../context/character.context';
 import { iCharacter } from '../interfaces/interfaz';

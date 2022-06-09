@@ -29,13 +29,9 @@ describe('Given the component ImageCard', () => {
                     <ImageCard character={mock} />
                 </BrowserRouter>
             );
-            const imageSrc = screen.getByRole('img');
+            const nameMock = screen.getByText(mock.name);
 
-            expect(imageSrc).not.toHaveAttribute('srasdasdfa');
-            expect(imageSrc).toHaveAttribute(
-                'src',
-                'https://rickandmortyapi.com/api/character/avatar/361.jpeg'
-            );
+            expect(nameMock).toBeInTheDocument();
         });
     });
 });

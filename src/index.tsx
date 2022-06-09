@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
+import { CharacterContextProvider } from './context/character.provider';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -11,11 +12,13 @@ const root = ReactDOM.createRoot(
 root.render(
     <Auth0Provider
         domain="dev-ineuvml0.us.auth0.com"
-        clientId="sV0pwr2jmJOOxQaLU86P7xaIJy8zIs5J"
-        redirectUri={'http://localhost:3000/login'}
+        clientId="Nd6XphhyswrZQYwiqn3e1GbC1fALjdUJ"
+        redirectUri={'http://localhost:3000'}
     >
         <React.StrictMode>
-            <App />
+            <CharacterContextProvider>
+                <App />
+            </CharacterContextProvider>
         </React.StrictMode>
     </Auth0Provider>
 );

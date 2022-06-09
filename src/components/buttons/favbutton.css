@@ -6,7 +6,7 @@
     width: 55px;
 }
 .favorite {
-    -webkit-animation: 1s rotate linear infinite;
+    -webkit-animation: 0.5s rotate linear infinite;
 }
 
 @keyframes rotate {
