@@ -71,6 +71,28 @@
       "favorite": true,
       "nickName": "jorgealia94",
       "id": 6
+    },
+    {
+      "newId": 1,
+      "name": "Rick Sanchez",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "nickName": "jorgealia94",
+      "id": 7
+    },
+    {
+      "newId": 4,
+      "name": "Beth Smith",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/4.jpeg",
+      "gender": "Female",
+      "favorite": true,
+      "nickName": "jorgealia94",
+      "id": 8
     }
   ]
 }

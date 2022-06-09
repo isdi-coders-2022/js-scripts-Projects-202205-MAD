@@ -1,11 +1,17 @@
 import { aMenuItems } from '../../interfaces/menu-items';
 import { Menu } from '../menu/menu';
+import './header.css';
 
 export function Header({ options }: { options: aMenuItems }) {
     const template = (
         <>
-            <div>
-                <h1> Rick and Morty</h1>
+            <div className="container__title">
+                <img
+                    role="img"
+                    className="logo__title"
+                    src="./img/Rick-and-Morty.png"
+                    alt=""
+                />
             </div>
             <Menu options={options}></Menu>
         </>

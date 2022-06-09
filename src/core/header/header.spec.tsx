@@ -21,8 +21,8 @@ describe('Given the component Header', () => {
                 </BrowserRouter>
             );
 
-            const nameTeam = screen.getByText(/Rick/i);
-            expect(nameTeam).toBeInTheDocument();
+            const result = screen.getAllByRole(/img/i);
+            expect(result[0]).toHaveProperty('src');
         });
     });
 });

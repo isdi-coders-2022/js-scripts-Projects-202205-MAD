@@ -1,0 +1,12 @@
+.Nav-Button {
+    font-family: 'Creepster', cursive;
+    font-size: 30px;
+    background-color: rgb(102, 255, 0);
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+    border: 2px solid white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}

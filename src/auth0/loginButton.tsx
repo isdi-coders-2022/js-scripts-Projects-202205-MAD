@@ -5,8 +5,6 @@ import { CharactersContext } from '../context/character.context';
 const LoginButton = () => {
     const { isAuthenticated, user } = useContext(CharactersContext);
     const { loginWithRedirect } = useAuth0();
-    console.log(user, ' JORGER');
-    console.log(isAuthenticated, 'ESTADO');
 
     return (
         <div role="button" onClick={() => loginWithRedirect()}>
