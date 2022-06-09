@@ -1,5 +1,3 @@
-import { ReactElement, useContext } from 'react';
-import { CharactersContext } from '../../context/character.context';
 import { iCharacter } from '../../interfaces/interfaz';
 
 export function CharacterCard({ character }: { character: iCharacter }) {
@@ -13,7 +11,6 @@ export function CharacterCard({ character }: { character: iCharacter }) {
                 <p>Status: {character.status}</p>
                 <p>Specie: {character.species}</p>
                 <p>Gender: {character.gender}</p>
-                <p>Origin: {character.origin.name}</p>
             </div>
         </>
     );

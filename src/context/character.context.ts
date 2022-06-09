@@ -1,5 +1,4 @@
-import { createContext, useState } from 'react';
-import { NumericLiteral } from 'typescript';
+import { createContext } from 'react';
 import { iCharacter } from '../interfaces/interfaz';
 // const [page, setPage] = useState(1);
 

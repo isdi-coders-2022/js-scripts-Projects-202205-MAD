@@ -6,7 +6,11 @@ const LoginButton = () => {
 
     return (
         <div role="button" onClick={() => loginWithRedirect()}>
-            <img className="menu__icon" src={`./img/iconlogin.png`} alt="" />
+            <img
+                className="menu__icon icon__login"
+                src={`./img/iconlogin.png`}
+                alt=""
+            />
         </div>
     );
 };

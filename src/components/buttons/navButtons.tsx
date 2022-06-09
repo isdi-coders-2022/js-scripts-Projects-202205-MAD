@@ -1,4 +1,4 @@
-import { ReactElement, SyntheticEvent, useContext, useState } from 'react';
+import { useContext } from 'react';
 import { CharactersContext } from '../../context/character.context';
 export function NavButtons() {
     const { nextPage, currentPage } = useContext(CharactersContext);

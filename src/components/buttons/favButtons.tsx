@@ -5,8 +5,7 @@ import { iCharacter } from '../../interfaces/interfaz';
 import './favbutton.css';
 
 export function FavButtons({ character }: { character: iCharacter }) {
-    const { addCharacter, charactersFav, deleteCharacter } =
-        useContext(CharactersContext);
+    const { addCharacter, charactersFav } = useContext(CharactersContext);
 
     const fav = { ...character, favorite: true };
 

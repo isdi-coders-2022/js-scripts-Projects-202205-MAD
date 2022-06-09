@@ -7,14 +7,12 @@ import * as actions from '../reducers/reducer/action.creators';
 import * as actionsFav from '../reducers/reducerFav/actionFav.creators';
 import { characterFavReducer } from '../reducers/reducerFav/reducefav';
 import { HttpStoreCharacter } from '../services/store.characters';
-import { CharacterModel } from '../data/characterModel';
-import { isTemplateExpression } from 'typescript';
 
 export function CharacterContextProvider({
     children,
 }: {
     children: ReactElement;
-}) {
+}): JSX.Element {
     const initialState: Array<iCharacter> = [];
 
     const [characters, dispatch] = useReducer(characterReducer, initialState);

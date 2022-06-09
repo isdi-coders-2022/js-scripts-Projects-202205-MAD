@@ -14,13 +14,11 @@ function App() {
     const HomePage = React.lazy(() => import('./pages/homePage'));
     const FavPage = React.lazy(() => import('./pages/favPage'));
     const DetailsPage = React.lazy(() => import('./pages/detailsPage'));
-    const LoginPage = React.lazy(() => import('./pages/loginPage'));
 
     const options: aMenuItems = [
         { path: '', label: 'home', page: <HomePage /> },
         { path: 'favorites', label: 'favorites', page: <FavPage /> },
         { path: 'details/:id', label: '', page: <DetailsPage /> },
-        { path: 'login', label: '', page: <LoginPage /> },
         { path: '*', label: '', page: <Navigate replace to="" /> },
     ];
 

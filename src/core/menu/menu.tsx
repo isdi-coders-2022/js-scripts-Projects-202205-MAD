@@ -1,7 +1,7 @@
 import './menu.css';
 import { Link } from 'react-router-dom';
 import { aMenuItems } from '../../interfaces/menu-items';
-import LoginButton from '../../auth0/auth0Provider';
+import LoginButton from '../../auth0/loginButton';
 
 export function Menu({ options }: { options: aMenuItems }) {
     return (
