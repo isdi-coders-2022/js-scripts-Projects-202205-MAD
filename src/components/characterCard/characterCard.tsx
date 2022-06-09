@@ -1,5 +1,3 @@
-import { ReactElement, useContext } from 'react';
-import { CharactersContext } from '../../context/character.context';
 import { iCharacter } from '../../interfaces/interfaz';
 
 export function CharacterCard({ character }: { character: iCharacter }) {
