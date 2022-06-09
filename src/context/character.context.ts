@@ -1,3 +1,4 @@
+import { RedirectLoginOptions, User } from '@auth0/auth0-react';
 import { createContext } from 'react';
 import { iCharacter } from '../interfaces/interfaz';
 // const [page, setPage] = useState(1);
@@ -10,6 +11,8 @@ let initialContext: {
     addCharacter: (character: iCharacter) => void;
     deleteCharacter: (character: iCharacter) => void;
     toggleComplete: (character: iCharacter) => void;
+    user: User | undefined;
+    isAuthenticated: boolean;
 } = {
     characters: [],
     nextPage: () => {},
@@ -18,6 +21,8 @@ let initialContext: {
     addCharacter: () => {},
     deleteCharacter: () => {},
     toggleComplete: () => {},
+    user: {},
+    isAuthenticated: false,
 };
 
 export const CharactersContext = createContext(initialContext);

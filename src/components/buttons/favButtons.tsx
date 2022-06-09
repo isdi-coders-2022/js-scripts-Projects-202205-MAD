@@ -5,16 +5,27 @@ import { iCharacter } from '../../interfaces/interfaz';
 import './favbutton.css';
 
 export function FavButtons({ character }: { character: iCharacter }) {
-    const { addCharacter, charactersFav } = useContext(CharactersContext);
+    const { addCharacter, charactersFav, user } = useContext(CharactersContext);
 
-    const fav = { ...character, favorite: true };
+    const { id, name, species, status, image, gender } = character;
+    const newId = id;
+    const fav: iCharacter = {
+        newId,
+        name,
+        species,
+        status,
+        image,
+        gender,
+        favorite: true,
+        nickName: user?.nickname,
+    };
 
     const template = (
         <>
             <div
                 role="button"
                 className={
-                    charactersFav.find((item) => item.id === character.id)
+                    charactersFav.find((item) => item.newId === character.id)
                         ? 'button__fav favorite'
                         : 'button__fav '
                 }
@@ -24,7 +35,7 @@ export function FavButtons({ character }: { character: iCharacter }) {
             >
                 <img
                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
-                    alt="FavIcon"
+                    alt="buttonfav"
                     className="picachu"
                 />
             </div>

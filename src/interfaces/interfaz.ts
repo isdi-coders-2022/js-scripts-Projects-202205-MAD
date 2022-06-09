@@ -1,6 +1,8 @@
 export interface iCharacter {
     favorite?: boolean;
-    id: number;
+    nickName?: string;
+    newId?: number;
+    id?: number;
     name: string;
     status: string;
     species: string;

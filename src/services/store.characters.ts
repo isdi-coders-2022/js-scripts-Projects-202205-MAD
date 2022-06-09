@@ -6,12 +6,14 @@ export class HttpStoreCharacter {
     constructor() {
         this.url = 'http://localhost:3500/results';
     }
-    getCharacters(): Promise<any> {
+    getCharacters(nickName: string): Promise<any> {
         // GET
-        return fetch(this.url).then((resp) => {
-            console.log(resp.status);
-            return resp.json();
-        });
+        return fetch('http://localhost:3500/results?nickName=' + nickName).then(
+            (resp) => {
+                console.log(resp.status);
+                return resp.json();
+            }
+        );
     }
     getCharacter(id: string): Promise<iCharacter> {
         // GET

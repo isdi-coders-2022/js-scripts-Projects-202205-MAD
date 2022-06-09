@@ -7,6 +7,7 @@ import * as actions from '../reducers/reducer/action.creators';
 import * as actionsFav from '../reducers/reducerFav/actionFav.creators';
 import { characterFavReducer } from '../reducers/reducerFav/reducefav';
 import { HttpStoreCharacter } from '../services/store.characters';
+import { useAuth0 } from '@auth0/auth0-react';
 
 export function CharacterContextProvider({
     children,
@@ -18,6 +19,8 @@ export function CharacterContextProvider({
     const [characters, dispatch] = useReducer(characterReducer, initialState);
 
     const [currentPage, setCurrentPage] = useState(1);
+
+    const { loginWithRedirect, user, logout, isAuthenticated } = useAuth0();
 
     useEffect(() => {
         CharacterApi.getCharacters(currentPage).then((resp) => {
@@ -43,10 +46,10 @@ export function CharacterContextProvider({
     );
 
     useEffect(() => {
-        store.getCharacters().then((resp) => {
+        store.getCharacters(user?.nickname as string).then((resp) => {
             dispatchFav(actionsFav.loadCharactersFavAction(resp));
         });
-    }, []);
+    }, [user]);
 
     const addCharacter = (character: iCharacter) => {
         store
@@ -78,6 +81,8 @@ export function CharacterContextProvider({
         addCharacter,
         deleteCharacter,
         toggleComplete,
+        user,
+        isAuthenticated,
     };
 
     return (
