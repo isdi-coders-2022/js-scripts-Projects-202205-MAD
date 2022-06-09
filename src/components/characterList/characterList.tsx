@@ -1,8 +1,6 @@
-import { useContext } from 'react';
-import { CharactersContext } from '../../context/character.context';
 import { iCharacter } from '../../interfaces/interfaz';
-import { CharacterCard } from '../characterCard/characterCard';
 import { ImageCard } from '../characterCard/imageCard';
+import './characterList.css';
 
 export function CharacterList({
     characters,
@@ -13,7 +11,7 @@ export function CharacterList({
         <ul className="list__card">
             {characters.length &&
                 characters.map((character: iCharacter) => (
-                    <li key={character.id}>
+                    <li className="wrapper__image" key={character.id}>
                         <ImageCard character={character}></ImageCard>
                     </li>
                 ))}

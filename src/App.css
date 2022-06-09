@@ -11,16 +11,15 @@ body {
 .list__card {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: 150px 150px;
+    grid-template-columns: 130px 130px;
     grid-template-rows: 150px 150px;
 }
 ul {
-    padding: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
     list-style: none;
     display: flex;
     justify-content: space-between;
-    /* margin-left: 2rem;
-    margin-right: 2rem; */
 }
 .image {
     width: 120px;
@@ -29,12 +28,16 @@ ul {
 h1 {
     text-align: center;
 }
-
+.wrapper__picachu {
+}
 @media (min-width: 600px) {
     .list__card {
         display: grid;
         grid-gap: 1rem;
-        grid-template-columns: 200px 200px 200px 200px;
+        grid-template-columns: 180px 180px 180px 180px;
         grid-template-rows: 200px 200px;
+    }
+    .wrapper__picachu {
+        margin-left: 32px;
     }
 }

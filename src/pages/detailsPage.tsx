@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { CharacterCard } from '../components/characterCard/characterCard';
 import { CharactersContext } from '../context/character.context';
 import { iCharacter } from '../interfaces/interfaz';
+import './detailsPage.css';
 
 export function DetailsPage() {
     const { characters } = useContext(CharactersContext);
@@ -11,7 +12,7 @@ export function DetailsPage() {
 
     const template = (
         <>
-            <div>
+            <div className="wrapper__characterCard">
                 <CharacterCard
                     character={
                         characters.find(

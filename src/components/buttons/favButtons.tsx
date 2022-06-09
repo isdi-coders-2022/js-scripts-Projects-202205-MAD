@@ -22,23 +22,27 @@ export function FavButtons({ character }: { character: iCharacter }) {
 
     const template = (
         <>
-            <div
-                role="button"
-                className={
-                    charactersFav.find((item) => item.newId === character.id)
-                        ? 'button__fav favorite'
-                        : 'button__fav '
-                }
-                onClick={() => {
-                    addCharacter(fav);
-                }}
-            >
-                <img
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
-                    alt="buttonfav"
-                    className="picachu"
-                    title="Add to favorite"
-                />
+            <div className="wrapper__picachu">
+                <div
+                    role="button"
+                    className={
+                        charactersFav.find(
+                            (item) => item.newId === character.id
+                        )
+                            ? 'button__fav favorite'
+                            : 'button__fav '
+                    }
+                    onClick={() => {
+                        addCharacter(fav);
+                    }}
+                >
+                    <img
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+                        alt="buttonfav"
+                        className="picachu"
+                        title="Add to favorite"
+                    />
+                </div>
             </div>
         </>
     );
