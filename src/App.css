@@ -28,8 +28,12 @@ ul {
 h1 {
     text-align: center;
 }
-.wrapper__picachu {
+h2 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
+
 @media (min-width: 600px) {
     .list__card {
         display: grid;

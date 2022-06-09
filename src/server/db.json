@@ -307,28 +307,6 @@
       "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
       "gender": "Male",
       "favorite": true,
-      "nickName": "jorgealia94",
-      "id": 38
-    },
-    {
-      "newId": 4,
-      "name": "Beth Smith",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/4.jpeg",
-      "gender": "Female",
-      "favorite": true,
-      "nickName": "jorgealia94",
-      "id": 39
-    },
-    {
-      "newId": 2,
-      "name": "Morty Smith",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
-      "gender": "Male",
-      "favorite": true,
       "id": 40
     },
     {
@@ -360,28 +338,38 @@
       "gender": "Female",
       "favorite": true,
       "nickName": "jorgealia94",
+      "id": 43
+    },
+    {
+      "newId": 2,
+      "name": "Morty Smith",
+      "species": "Human",
+      "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+      "gender": "Male",
+      "favorite": true,
+      "nickName": "jorgealia94",
       "id": 44
     },
     {
-      "newId": 1,
-      "name": "Rick Sanchez",
+      "newId": 2,
+      "name": "Morty Smith",
       "species": "Human",
       "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
       "gender": "Male",
       "favorite": true,
       "nickName": "jorgealia94",
       "id": 45
     },
     {
-      "newId": 3,
-      "name": "Summer Smith",
-      "species": "Human",
+      "newId": 79,
+      "name": "Crab Spider",
+      "species": "Alien",
       "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
-      "gender": "Female",
+      "image": "https://rickandmortyapi.com/api/character/avatar/79.jpeg",
+      "gender": "unknown",
       "favorite": true,
-      "nickName": "jorgealia94",
       "id": 46
     }
   ]
