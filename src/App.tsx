@@ -16,10 +16,25 @@ function App() {
     const DetailsPage = React.lazy(() => import('./pages/detailsPage'));
 
     const options: aMenuItems = [
-        { path: '', label: 'home', page: <HomePage /> },
-        { path: 'favorites', label: 'favorites', page: <FavPage /> },
-        { path: 'details/:id', label: '', page: <DetailsPage /> },
-        { path: '*', label: '', page: <Navigate replace to="" /> },
+        { path: '', label: 'home', page: <HomePage />, title: 'Home' },
+        {
+            path: 'favorites',
+            label: 'favorites',
+            page: <FavPage />,
+            title: 'Favorites',
+        },
+        {
+            path: 'details/:id',
+            label: '',
+            page: <DetailsPage />,
+            title: '',
+        },
+        {
+            path: '*',
+            label: '',
+            page: <Navigate replace to="" />,
+            title: '',
+        },
     ];
 
     return (

@@ -37,6 +37,7 @@ export function FavButtons({ character }: { character: iCharacter }) {
                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
                     alt="buttonfav"
                     className="picachu"
+                    title="Add to favorite"
                 />
             </div>
         </>

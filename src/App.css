@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: 'Creepster', cursive;
     color: white;
@@ -7,7 +9,6 @@ body {
     background: linear-gradient(rgb(92, 226, 9), black);
 }
 .list__card {
-    margin-left: 100px;
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: 150px 150px;
@@ -18,8 +19,8 @@ ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    /* margin-left: 2rem;
+    margin-right: 2rem; */
 }
 .image {
     width: 120px;
@@ -31,7 +32,6 @@ h1 {
 
 @media (min-width: 600px) {
     .list__card {
-        margin-left: 100px;
         display: grid;
         grid-gap: 1rem;
         grid-template-columns: 200px 200px 200px 200px;

@@ -1,9 +1,9 @@
-import { useContext, SyntheticEvent, useState, FormEvent } from 'react';
+import { useContext, SyntheticEvent } from 'react';
 import { CharactersContext } from '../../context/character.context';
-import { iCharacter } from '../../interfaces/interfaz';
+import './browser.css';
 
 export function Browser() {
-    const { FindCharacter, currentName } = useContext(CharactersContext);
+    const { FindCharacter } = useContext(CharactersContext);
 
     function handleChange(ev: SyntheticEvent) {
         const element = ev.target as HTMLFormElement;
@@ -14,15 +14,17 @@ export function Browser() {
 
     const template = (
         <>
-            <form action="">
-                <input
-                    type="text"
-                    name=""
-                    id="Browser"
-                    placeholder="Busca tu personaje"
-                    onInput={handleChange}
-                />
-            </form>
+            <div className="container__browser">
+                <form action="">
+                    <input
+                        type="text"
+                        name=""
+                        id="Browser"
+                        placeholder="Search for your character"
+                        onInput={handleChange}
+                    />
+                </form>
+            </div>
         </>
     );
 

@@ -1,7 +1,8 @@
+import './footer.css';
 export function Footer() {
     const template = (
         <>
-            <address>
+            <address className="address">
                 <p>J´s Scripts</p>
                 <p>
                     All the data in this app is extracted from the api

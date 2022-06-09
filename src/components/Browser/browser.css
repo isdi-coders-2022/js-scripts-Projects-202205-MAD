@@ -1,0 +1,20 @@
+.container__browser div {
+    text-align: center;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+div .container__browser {
+    text-align: center;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+input {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

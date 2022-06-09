@@ -7,7 +7,12 @@ const LogoutButton = () => {
 
     return (
         <div role="button" className="button__out" onClick={() => logout()}>
-            <img src="./img/loginout.png" alt="" className="button__out" />
+            <img
+                src="./img/loginout.png"
+                alt=""
+                className="button__out"
+                title="LogOut"
+            />
         </div>
     );
 };

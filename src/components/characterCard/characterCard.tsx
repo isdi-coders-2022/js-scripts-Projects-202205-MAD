@@ -1,12 +1,14 @@
 import { iCharacter } from '../../interfaces/interfaz';
 
+import './characterCard.css';
+
 export function CharacterCard({ character }: { character: iCharacter }) {
     const template = (
         <>
             <div>
-                <img src={character.image} alt="" />
+                <img className="image__details" src={character.image} alt="" />
             </div>
-            <div>
+            <div className="description__details">
                 <h2>{character.name}</h2>
                 <p>Status: {character.status}</p>
                 <p>Specie: {character.species}</p>
