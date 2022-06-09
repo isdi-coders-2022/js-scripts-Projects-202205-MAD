@@ -28,6 +28,7 @@ describe('Given the function FavButtons', () => {
                 favorite: true,
             };
             const context = {
+                charactersBrowser: [],
                 characters: [],
                 nextPage: jest.fn(),
                 currentPage: 1,
@@ -35,6 +36,10 @@ describe('Given the function FavButtons', () => {
                 addCharacter: jest.fn(),
                 deleteCharacter: jest.fn(),
                 toggleComplete: jest.fn(),
+                user: {},
+                isAuthenticated: false,
+                currentName: '',
+                FindCharacter: () => {},
             };
 
             render(
