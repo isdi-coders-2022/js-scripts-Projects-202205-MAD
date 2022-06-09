@@ -1,98 +1,98 @@
 {
-  "info": {
-    "count": 826,
-    "pages": 42,
-    "next": "https://rickandmortyapi.com/api/character/?page=2",
-    "prev": null
-  },
-  "results": [
-    {
-      "newId": 1,
-      "name": "Rick Sanchez",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-      "gender": "Male",
-      "favorite": true,
-      "nickName": "josearmandorr95",
-      "id": 1
+    "info": {
+        "count": 826,
+        "pages": 42,
+        "next": "https://rickandmortyapi.com/api/character/?page=2",
+        "prev": null
     },
-    {
-      "newId": 3,
-      "name": "Summer Smith",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
-      "gender": "Female",
-      "favorite": true,
-      "nickName": "josearmandorr95",
-      "id": 2
-    },
-    {
-      "newId": 5,
-      "name": "Jerry Smith",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/5.jpeg",
-      "gender": "Male",
-      "favorite": true,
-      "nickName": "josearmandorr95",
-      "id": 3
-    },
-    {
-      "newId": 1,
-      "name": "Rick Sanchez",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-      "gender": "Male",
-      "favorite": true,
-      "nickName": "jorgealia94",
-      "id": 4
-    },
-    {
-      "newId": 1,
-      "name": "Rick Sanchez",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-      "gender": "Male",
-      "favorite": true,
-      "nickName": "jorgealia94",
-      "id": 5
-    },
-    {
-      "newId": 3,
-      "name": "Summer Smith",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
-      "gender": "Female",
-      "favorite": true,
-      "nickName": "jorgealia94",
-      "id": 6
-    },
-    {
-      "newId": 1,
-      "name": "Rick Sanchez",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-      "gender": "Male",
-      "favorite": true,
-      "nickName": "jorgealia94",
-      "id": 7
-    },
-    {
-      "newId": 4,
-      "name": "Beth Smith",
-      "species": "Human",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/4.jpeg",
-      "gender": "Female",
-      "favorite": true,
-      "nickName": "jorgealia94",
-      "id": 8
-    }
-  ]
+    "results": [
+        {
+            "newId": 1,
+            "name": "Rick Sanchez",
+            "species": "Human",
+            "status": "Alive",
+            "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+            "gender": "Male",
+            "favorite": true,
+            "nickName": "josearmandorr95",
+            "id": 1
+        },
+        {
+            "newId": 3,
+            "name": "Summer Smith",
+            "species": "Human",
+            "status": "Alive",
+            "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+            "gender": "Female",
+            "favorite": true,
+            "nickName": "josearmandorr95",
+            "id": 2
+        },
+        {
+            "newId": 5,
+            "name": "Jerry Smith",
+            "species": "Human",
+            "status": "Alive",
+            "image": "https://rickandmortyapi.com/api/character/avatar/5.jpeg",
+            "gender": "Male",
+            "favorite": true,
+            "nickName": "josearmandorr95",
+            "id": 3
+        },
+        {
+            "newId": 1,
+            "name": "Rick Sanchez",
+            "species": "Human",
+            "status": "Alive",
+            "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+            "gender": "Male",
+            "favorite": true,
+            "nickName": "jorgealia94",
+            "id": 4
+        },
+        {
+            "newId": 1,
+            "name": "Rick Sanchez",
+            "species": "Human",
+            "status": "Alive",
+            "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+            "gender": "Male",
+            "favorite": true,
+            "nickName": "jorgealia94",
+            "id": 5
+        },
+        {
+            "newId": 3,
+            "name": "Summer Smith",
+            "species": "Human",
+            "status": "Alive",
+            "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+            "gender": "Female",
+            "favorite": true,
+            "nickName": "jorgealia94",
+            "id": 6
+        },
+        {
+            "newId": 1,
+            "name": "Rick Sanchez",
+            "species": "Human",
+            "status": "Alive",
+            "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+            "gender": "Male",
+            "favorite": true,
+            "nickName": "jorgealia94",
+            "id": 7
+        },
+        {
+            "newId": 4,
+            "name": "Beth Smith",
+            "species": "Human",
+            "status": "Alive",
+            "image": "https://rickandmortyapi.com/api/character/avatar/4.jpeg",
+            "gender": "Female",
+            "favorite": true,
+            "nickName": "jorgealia94",
+            "id": 8
+        }
+    ]
 }
