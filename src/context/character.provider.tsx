@@ -34,7 +34,6 @@ export function CharacterContextProvider({
     }, [currentName]);
 
     function FindCharacter(name: string) {
-        console.log(name, 'JORGE  NADA');
         setCurrentName(name);
     }
 

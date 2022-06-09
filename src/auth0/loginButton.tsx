@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { CharactersContext } from '../context/character.context';
 
 const LoginButton = () => {
-    const { isAuthenticated, user } = useContext(CharactersContext);
-    const { loginWithRedirect } = useAuth0();
+    const { loginWithRedirect, isAuthenticated, user } = useAuth0();
 
     return (
         <div role="button" onClick={() => loginWithRedirect()}>
@@ -12,6 +10,7 @@ const LoginButton = () => {
                 className="menu__icon icon__login"
                 src={isAuthenticated ? user?.picture : `./img/iconlogin.png`}
                 alt=""
+                title="Login"
             />
         </div>
     );

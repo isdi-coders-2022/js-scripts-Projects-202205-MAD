@@ -4,3 +4,6 @@
 .container__title {
     text-align: center;
 }
+header {
+    width: 100%;
+}

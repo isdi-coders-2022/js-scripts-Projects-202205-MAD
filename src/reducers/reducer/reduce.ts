@@ -15,17 +15,6 @@ export function characterReducer(
         case actionTypes['characters@load']:
             state = action.payload;
             break;
-        case actionTypes['characters@add']:
-            state = [...initalState, action.payload];
-            break;
-        case actionTypes['characters@update']:
-            state = initalState.map((item) =>
-                item.id === action.payload.id ? action.payload : item
-            );
-            break;
-        case actionTypes['characters@delete']:
-            state = initalState.filter((item) => item.id !== action.payload.id);
-            break;
         default:
             state = initalState;
     }

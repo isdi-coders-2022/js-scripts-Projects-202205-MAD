@@ -17,6 +17,7 @@ export function Menu({ options }: { options: aMenuItems }) {
                                 className="menu__icon"
                                 src={`./img/icon` + item.label + `.png`}
                                 alt=""
+                                title={item.title}
                             />
                         </Link>
                     </li>

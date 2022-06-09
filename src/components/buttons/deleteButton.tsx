@@ -21,6 +21,7 @@ export function DeleteButton({ character }: { character: iCharacter }) {
                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
                     alt="FavIcon"
                     className="picachu"
+                    title="Delete to favorite"
                 />
             </div>
         </>
