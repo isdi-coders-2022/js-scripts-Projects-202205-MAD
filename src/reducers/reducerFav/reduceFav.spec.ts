@@ -1,52 +1,55 @@
 import { iCharacter } from '../../interfaces/interfaz';
-import { characterReducer } from '../reducer/reduce';
-import { addCharactersFavAction } from './actionFav.creators';
 import { characterFavReducer } from './reducefav';
+import * as action from './actionFav.creators';
 
-// Un reducer recive un estado inicial y una acción
+const mockCharacter: iCharacter = {
+    id: 1,
+    name: 'test',
+    status: 'alive',
+    species: 'human',
+    gender: 'male',
+    image: 'testImage',
+};
 
-// En función del tipo de acción nos devuelve un nuevo estado
+describe('Given our reducer', () => {
+    describe('When calling with load action', () => {
+        test('Should load an array of mockCharacter', () => {
+            const newState = characterFavReducer(
+                [],
+                action.loadCharactersFavAction([mockCharacter])
+            );
 
-// ¿Como testeo?
+            expect(newState).toEqual([mockCharacter]);
+        });
+    });
+    describe('When calling with add action', () => {
+        test('Should add a character', () => {
+            const newState = characterFavReducer(
+                [],
+                action.addCharactersFavAction(mockCharacter)
+            );
 
-// Llamo al reducer con un estado inicial y una acción
+            expect(newState).toEqual([mockCharacter]);
+        });
+    });
+    describe('When calling with update action', () => {
+        test('Should update state', () => {
+            const newState = characterFavReducer(
+                [],
+                action.upadteCharactersFavAction(mockCharacter)
+            );
 
-// Compruebo que el estado resultante coincide con el esperado de ese tipo de acción
+            expect(newState).toEqual([]);
+        });
+    });
+    describe('When calling with delete action', () => {
+        test('Should delete item', () => {
+            const newState = characterFavReducer(
+                [mockCharacter],
+                action.deteleCharactersFavAction(mockCharacter)
+            );
 
-// Repito los pasos por cada tipo de acción más el default
-
-describe('first', () => {
-    describe('first', () => {
-        //         const mockInitialState: Array<iCharacter> = [];
-
-        //         const character = {
-        //             id: 24,
-        //             name: 'Armagheadon',
-        //             status: 'Alive',
-        //             species: 'Alien',
-        //             type: 'Cromulon',
-        //             gender: 'Male',
-        //             origin: {
-        //                 name: 'Signus 5 Expanse',
-        //                 url: 'https://rickandmortyapi.com/api/location/22',
-        //             },
-        //             location: {
-        //                 name: 'Signus 5 Expanse',
-        //                 url: 'https://rickandmortyapi.com/api/location/22',
-        //             },
-        //             image: 'https://rickandmortyapi.com/api/character/avatar/24.jpeg',
-        //             episode: ['https://rickandmortyapi.com/api/episode/16'],
-        //             url: 'https://rickandmortyapi.com/api/character/24',
-        //             created: '2017-11-05T08:48:30.776Z',
-        //             favorite: true,
-        //         };
-        test('should first', () => {
-            //             const [mockInitialState, dispatch] = useReducer(
-            //                 characterFavReducer,
-            //                 mockInitialState
-            //             );
-            //             addCharactersFavAction;
-            //             expect(mockInitialState.length).toBe(1);
+            expect(newState).toEqual([]);
         });
     });
 });

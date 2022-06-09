@@ -13,7 +13,6 @@ export function characterReducer(
     let state: Array<iCharacter> = [];
     switch (action.type) {
         case actionTypes['characters@load']:
-            console.log(action.payload);
             state = action.payload;
             break;
         case actionTypes['characters@add']:
