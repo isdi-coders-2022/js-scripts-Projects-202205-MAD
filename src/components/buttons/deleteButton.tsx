@@ -9,20 +9,22 @@ export function DeleteButton({ character }: { character: iCharacter }) {
 
     const template = (
         <>
-            <div
-                role="button"
-                className="button__fav favorite"
-                onClick={() => {
-                    const fav = { ...character, favorite: false };
-                    deleteCharacter(fav);
-                }}
-            >
-                <img
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
-                    alt="FavIcon"
-                    className="picachu"
-                    title="Delete to favorite"
-                />
+            <div className="wrapper__picachu">
+                <div
+                    role="button"
+                    className="button__fav favorite"
+                    onClick={() => {
+                        const fav = { ...character, favorite: false };
+                        deleteCharacter(fav);
+                    }}
+                >
+                    <img
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+                        alt="FavIcon"
+                        className="picachu"
+                        title="Delete to favorite"
+                    />
+                </div>
             </div>
         </>
     );

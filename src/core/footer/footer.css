@@ -3,5 +3,13 @@ footer {
 }
 .address p {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+
+address {
+    color: #04b4cc;
+    -webkit-text-stroke: 1px black;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 0.2em #b3dc2b, 0 0 0.2em #b3dc2b, 0 0 0.2em #b3dc2b;
 }

@@ -1,4 +1,4 @@
-import { RedirectLoginOptions, User } from '@auth0/auth0-react';
+import { User } from '@auth0/auth0-react';
 import { createContext } from 'react';
 import { iCharacter } from '../interfaces/interfaz';
 // const [page, setPage] = useState(1);

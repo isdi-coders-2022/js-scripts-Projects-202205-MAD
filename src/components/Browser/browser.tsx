@@ -14,16 +14,19 @@ export function Browser() {
 
     const template = (
         <>
-            <div className="container__browser">
-                <form action="">
-                    <input
-                        type="text"
-                        name=""
-                        id="Browser"
-                        placeholder="Search for your character"
-                        onInput={handleChange}
-                    />
-                </form>
+            <div className="wrapper__browser">
+                <div className="container__browser">
+                    <form action="">
+                        <input
+                            className="browser"
+                            type="text"
+                            name=""
+                            id="Browser"
+                            placeholder="Search for your character"
+                            onInput={handleChange}
+                        />
+                    </form>
+                </div>
             </div>
         </>
     );
