@@ -13,7 +13,6 @@ export function characterFavReducer(
     let state: Array<iCharacter> = [];
     switch (actionFav.type) {
         case actionTypesFav['charactersFav@load']:
-            console.log(actionFav.payload);
             state = actionFav.payload;
             break;
         case actionTypesFav['charactersFav@add']:

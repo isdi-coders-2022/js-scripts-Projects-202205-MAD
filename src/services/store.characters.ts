@@ -10,7 +10,6 @@ export class HttpStoreCharacter {
         // GET
         return fetch('http://localhost:3500/results?nickName=' + nickName).then(
             (resp) => {
-                console.log(resp.status);
                 return resp.json();
             }
         );
@@ -21,7 +20,6 @@ export class HttpStoreCharacter {
     }
     setCharacter(character: iCharacter): Promise<iCharacter> {
         // POST
-        console.log(character);
         return fetch(this.url, {
             method: 'POST',
             body: JSON.stringify(character),

@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import { CharactersContext } from '../../context/character.context';
+import './navButtons.css';
 export function NavButtons() {
     const { nextPage, currentPage } = useContext(CharactersContext);
 
     const template = (
         <>
-            <section>
+            <section className="container__navbutton">
                 <button
                     title="NextButton"
                     className="Nav-Button"
