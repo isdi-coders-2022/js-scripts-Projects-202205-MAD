@@ -9,7 +9,6 @@ export function DetailsPage() {
     const { characters } = useContext(CharactersContext);
 
     const params = useParams();
-
     const template = (
         <>
             <div className="wrapper__characterCard">
