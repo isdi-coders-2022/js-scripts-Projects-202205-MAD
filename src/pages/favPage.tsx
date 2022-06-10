@@ -11,7 +11,7 @@ export function FavPage() {
             {isAuthenticated ? (
                 <CharacterList characters={charactersFav} />
             ) : (
-                <div>
+                <div className="wrapper__tosee">
                     <h2>TO SEE YOUR LIST OF FAVORITES PLEASE LOGIN</h2>
                 </div>
             )}
