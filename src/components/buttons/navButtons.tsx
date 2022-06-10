@@ -7,16 +7,6 @@ export function NavButtons() {
     const template = (
         <>
             <section className="container__navbutton">
-                <button
-                    title="NextButton"
-                    className="Nav-Button"
-                    onClick={() => {
-                        nextPage('sum');
-                    }}
-                    id="next"
-                >
-                    NEXT
-                </button>
                 <>
                     {currentPage <= 1 ? (
                         ''
@@ -33,6 +23,16 @@ export function NavButtons() {
                         </button>
                     )}
                 </>
+                <button
+                    title="NextButton"
+                    className="Nav-Button"
+                    onClick={() => {
+                        nextPage('sum');
+                    }}
+                    id="next"
+                >
+                    NEXT
+                </button>
             </section>
         </>
     );

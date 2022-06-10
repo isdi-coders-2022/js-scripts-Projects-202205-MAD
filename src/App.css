@@ -29,9 +29,13 @@ h1 {
     text-align: center;
 }
 h2 {
+    padding-top: 10vh;
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+.wrapper__tosee {
+    min-height: 60vh;
 }
 
 @media (min-width: 600px) {
